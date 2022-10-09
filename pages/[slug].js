@@ -14,7 +14,7 @@ export default function Post({ post }) {
 
 // tell next.js how many pages there are
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:1337/api/posts')
+    const res = await fetch('https://jellyfish-app-6bigs.ondigitalocean.app/api/posts')
     const posts = await res.json();
     // console.log(posts.data[0].attributes.slug)
     const paths = posts.data.map((post) => ({
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     // const { slug } = params;
 
-    const res = await fetch(`http://localhost:1337/api/posts?filters[slug]=${params.slug}`)
+    const res = await fetch(`https://jellyfish-app-6bigs.ondigitalocean.app/api/posts?filters[slug]=${params.slug}`)
     const post = await res.json();
     // console.log(post)
 

@@ -23,7 +23,7 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   // get posts from api
-  const res = await fetch('http://localhost:1337/api/posts?populate=*');
+  const res = await fetch('https://jellyfish-app-6bigs.ondigitalocean.app/api/posts?populate=*');
   const posts = await res.json();
 
   console.log(posts);
